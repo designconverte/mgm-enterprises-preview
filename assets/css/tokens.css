@@ -1,0 +1,31 @@
+
+
+:root {
+  --mgm-abyss: #05141A;
+  --mgm-steel: #19283E;
+  --mgm-steel-2: #22344D;
+  --mgm-atlantic: #3D5B79;
+  --mgm-atlantic-deep: #2F4A66;
+  --mgm-mist: #89ACC1;
+  --mgm-haze: #CEDBE2;
+  --mgm-polar: #EFF0F2;
+  --mgm-paper-2: #E3E8EC;
+  --mgm-white: #FFFFFF;
+  --mgm-slate: #55697B;
+  --mgm-line: #D3DAE0;
+  --mgm-field: #6B7F92;
+  --mgm-error: #A52A2A;
+  --mgm-error-dark: #F2A7A0;
+  --mgm-silver: linear-gradient(115deg,#7D8287 0%,#E9EBEC 24%,#A9AEB2 46%,#F4F5F6 64%,#8E9499 100%);
+  --mgm-serif: 'Playfair Display',Georgia,'Times New Roman',serif;
+  --mgm-sans: 'Lato',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mgm-r-tile: 2px;
+  --mgm-r-sm: 6px;
+  --mgm-r-lg: 24px;
+  --mgm-r-pill: 999px;
+  --mgm-ease-set: cubic-bezier(.3,1.25,.5,1);
+  --mgm-ease-calm: cubic-bezier(.2,.8,.2,1);
+  --mgm-dur-fast: 160ms;
+  --mgm-dur-base: 280ms;
+  --mgm-dur-set: 420ms;
+}
