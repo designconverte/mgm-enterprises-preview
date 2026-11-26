@@ -1,11 +1,10 @@
-/* V3 (teste em /v3/), rodada 3: a câmera entra pela janela do logo (seção 7, "The company behind your project").
+/* Seção 7, "The company behind your project": a câmera entra pela janela do logo.
    A rolagem (0→1) dirige a cena presa na tela:
      0–.14   o símbolo do logo GRANDE + o título da seção
      .14–.64 a câmera avança para a janela; cada vidro acende com um papel (01–04) e mostra um pedaço do cômodo (vídeo)
      .64–.88 a câmera atravessa a janela: o vídeo vira a tela inteira
      .80–1   "Planned on paper. Built one trade at a time."
-   Movimento reduzido ou sem GSAP: nada aqui (fica o layout estático do CSS). Economia de dados: a cena roda com o pôster, sem vídeo.
-   Também troca o rótulo do menu compartilhado ("Our family" → "The company") só nesta página de teste. */
+   Movimento reduzido ou sem GSAP: nada aqui (fica o layout estático do CSS). Economia de dados: a cena roda com o pôster, sem vídeo. */
 (function () {
   'use strict';
   var me = document.currentScript;
@@ -22,12 +21,6 @@
   function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
 
   document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a[href="/#family"], a[href$="/#family"]').forEach(function (a) {
-      var num = a.querySelector('span');
-      a.textContent = 'The company';
-      if (num) a.prepend(num);
-    });
-
     var sec = document.querySelector('[data-mk]');
     if (!sec || reduce || !window.gsap || !window.ScrollTrigger) return;
     gsap.registerPlugin(ScrollTrigger);
