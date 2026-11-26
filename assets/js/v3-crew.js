@@ -7,10 +7,10 @@
   var GAP_MS = 320;
 
   document.addEventListener('DOMContentLoaded', function () {
-    // o menu compartilhado ainda diz "Our family"; na V3 a seção é outra
+    // o menu compartilhado ainda diz "Our family"; na V3 a seção é "The company"
     document.querySelectorAll('a[href="/#family"]').forEach(function (a) {
       var num = a.querySelector('span');
-      a.textContent = "Who's behind it";
+      a.textContent = 'The company';
       if (num) a.prepend(num);
     });
 
