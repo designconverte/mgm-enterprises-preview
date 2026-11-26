@@ -2,12 +2,14 @@
    1 palco do hero: depois que o desenho vira o cômodo (.is-built), o cômodo "ganha vida" (o vídeo entra por cima da foto).
      Com a lupa da planta (desktop) ou num cômodo novo, o vídeo sai e a foto do canvas volta.
    2 cards de serviço: o vídeo toca só enquanto o card está na tela.
-   3 a janela se abre (7b): a rolagem leva --p de 0 a 1; os 4 vidros viram a tela inteira.
-   Movimento reduzido ou economia de dados: nada de vídeo (fica a foto), e a janela já aparece aberta.
+   (o vídeo da seção 7, a câmera que entra pela janela do logo, fica em v3-mark.js)
+   Movimento reduzido ou economia de dados: nada de vídeo (fica a foto).
    Loops em vai-e-volta (sem corte), H.264 sem áudio: 1280 no desktop, 854 no resto. */
 (function () {
   'use strict';
-  var BASE = '/assets/video/';
+  /* a prévia mora numa subpasta (…github.io/<repo>/): o caminho vem do próprio script, nunca da raiz do domínio */
+  var me = document.currentScript;
+  var BASE = me && me.src ? new URL('../video/', me.src).href : '/assets/video/';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var conn = navigator.connection || {};
   var noVideo = reduce || conn.saveData === true || /(^|-)2g$/.test(conn.effectiveType || '');
@@ -39,25 +41,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    /* ── 3 · a janela se abre ── */
-    var band = document.querySelector('[data-band]');
-    if (band) {
-      var bv = band.querySelector('[data-band-video]');
-      /* tela cheia em cover: no celular em pé o vídeo 16:9 é ampliado, então sempre o 1280 */
-      if (!noVideo && bv) whileVisible(band, bv, function () { return BASE + bv.getAttribute('data-room') + '-1280.mp4'; });
-      if (!reduce && window.gsap && window.ScrollTrigger) {
-        gsap.registerPlugin(ScrollTrigger);
-        band.style.setProperty('--p', '0');
-        ScrollTrigger.create({
-          trigger: band,
-          start: 'top 85%',
-          end: function () { return '+=' + Math.round(window.innerHeight * 1.25); },
-          scrub: 0.6,
-          onUpdate: function (st) { band.style.setProperty('--p', st.progress.toFixed(4)); }
-        });
-      }
-    }
-
     if (noVideo) return;
     var ROOMS = window.MGM_ROOMS || {};
 
