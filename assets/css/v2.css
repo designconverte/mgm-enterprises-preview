@@ -1,0 +1,17 @@
+
+.svc__progress { display: none; }
+@media (max-width: 1023px) {
+  .svc.is-pinned { overflow: hidden; }
+  .svc.is-pinned .sheets {
+    display: flex; overflow: visible; scroll-snap-type: none;
+    margin: 0; padding: 6px 0 18px; gap: 16px; width: max-content; will-change: transform;
+  }
+  .svc.is-pinned .sheet { width: 78vw; flex: 0 0 auto; }
+  .svc.is-pinned .sheet:hover { transform: none; }
+  .svc.is-pinned .svc__progress {
+    display: flex; align-items: center; gap: 12px; margin-top: 6px;
+    font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--mgm-slate);
+  }
+  .svc__bar { position: relative; flex: 1; height: 2px; background: var(--mgm-line); border-radius: 2px; overflow: hidden; }
+  .svc__bar i { position: absolute; inset: 0; background: var(--mgm-atlantic); transform-origin: left center; transform: scaleX(0); }
+}
