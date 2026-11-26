@@ -586,3 +586,20 @@ body[data-header="solid"] .hdr .hdr__logo .on-dark { display: none; }
 @media (min-width: 1600px) { .hero { grid-template-columns: minmax(0, 47fr) minmax(0, 53fr); } }
 @media (max-width: 1023px) { .method__scene { background: var(--mgm-polar); margin: 0 calc(var(--gut) * -1); padding: 8px var(--gut) 14px; } .est { height: 470px; } .est__sheet { width: 82%; } }
 @media (min-width: 1024px) { .sc-gantt { width: 100%; gap: 12px; } .sc-gantt__r { grid-template-columns: 118px 1fr; font-size: 13px; } .sc-gantt__r div { height: 20px; } .sc-station { width: min(430px, 100%); } .sc-bin span { font-size: 11.5px; } .sc-sel { width: min(360px, 90%); } .sc-ping { width: min(400px, 100%); padding: 18px 20px; } .sc-ping b, .sc-ping span { font-size: 15px; } .sc-walk { width: min(360px, 92%); } .sc-visit > svg { width: min(250px, 66%); } }
+
+.svc__progress { display: none; }
+@media (max-width: 1023px) {
+  .svc.is-pinned { overflow: hidden; }
+  .svc.is-pinned .sheets {
+    display: flex; overflow: visible; scroll-snap-type: none;
+    margin: 0; padding: 6px 0 18px; gap: 16px; width: max-content; will-change: transform;
+  }
+  .svc.is-pinned .sheet { width: 78vw; flex: 0 0 auto; }
+  .svc.is-pinned .sheet:hover { transform: none; }
+  .svc.is-pinned .svc__progress {
+    display: flex; align-items: center; gap: 12px; margin-top: 6px;
+    font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--mgm-slate);
+  }
+  .svc__bar { position: relative; flex: 1; height: 2px; background: var(--mgm-line); border-radius: 2px; overflow: hidden; }
+  .svc__bar i { position: absolute; inset: 0; background: var(--mgm-atlantic); transform-origin: left center; transform: scaleX(0); }
+}

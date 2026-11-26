@@ -1,20 +1,8 @@
-/* MGM Enterprises · home V2 (test page /v2/).
-   1) Header and menu anchors stay on this page (the shared partials point to /#…).
-   2) Mobile (< 1024 px): "What we remodel" pins and the sheets slide sideways with the vertical scroll. */
+/* MGM Enterprises · services pin.
+   Mobile (< 1024 px): "What we remodel" pins and the sheets slide sideways with the vertical scroll.
+   Without GSAP/ScrollTrigger or with reduced motion it stays the native swipe row. */
 (function () {
   'use strict';
-  Array.prototype.forEach.call(document.querySelectorAll('a[href^="/#"]'), function (a) {
-    a.setAttribute('href', a.getAttribute('href').slice(1));
-  });
-  // menu follows the V2 section order: "What we remodel" before "How we work"
-  Array.prototype.forEach.call(document.querySelectorAll('a[href="#services"]'), function (a) {
-    var li = a.closest('li'); var prev = li && li.previousElementSibling;
-    if (!prev || !prev.querySelector('a[href="#method"]')) return;
-    li.parentNode.insertBefore(li, prev);
-    var nums = li.parentNode.querySelectorAll('li > a > span[aria-hidden]');
-    Array.prototype.forEach.call(nums, function (n, i) { n.textContent = ('0' + (i + 1)).slice(-2); });
-  });
-
   document.addEventListener('DOMContentLoaded', function () {
     var gsap = window.gsap;
     var ST = window.ScrollTrigger;
