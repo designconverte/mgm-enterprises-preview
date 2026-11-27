@@ -383,7 +383,8 @@ textarea.input { min-height: 84px; resize: vertical; line-height: 1.5; }
 .mk--anim .mk__pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; padding: 0; }
 .mk--anim .mk__vid { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; clip-path: inset(50%); }
 .mk--anim .mk__shade { display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgb(5 20 26 / 0) 30%, rgb(5 20 26 / .8) 100%); opacity: var(--e, 0); }
-.mk--anim .mk__art { --aw: min(50vw, 104vh); position: absolute; z-index: 2; margin: 0; width: var(--aw); left: calc(68% - var(--aw) / 2); top: calc(50% - var(--aw) * .2456); will-change: transform; }
+
+.mk--anim .mk__art { --txt-r: calc(var(--edge) + min(31vw, 440px)); --aw: min(28vw, 58vh, 600px); position: absolute; z-index: 2; margin: 0; width: var(--aw); left: max(calc(var(--txt-r) + (100% - var(--edge) - var(--txt-r)) / 2 - var(--aw) / 2), calc(var(--txt-r) + 5vw + var(--aw) * .061)); top: calc(50% - var(--aw) * .2456); will-change: transform; }
 .mk--anim .mk__roof { opacity: var(--roof, 1); }
 .mk--anim .mk__pane.is-lit { fill-opacity: 0; }
 .mk--anim .mk__txt { position: absolute; inset: 0; z-index: 3; display: block; pointer-events: none; }
