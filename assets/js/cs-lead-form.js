@@ -41,7 +41,7 @@
   const ACTION_SELECTOR = '[data-cs-next], [data-cs-back], [type="submit"]';
   const DOCUMENT_POSITION_FOLLOWING = 4; // Node.DOCUMENT_POSITION_FOLLOWING
 
-  // ── Funções puras (testadas em tests/construction-site-factory/lead-form/) ──
+  // ── Funções puras ─────────────────────────────────────────────────────────
 
   function toStr(value) {
     return value == null ? '' : String(value);
